@@ -2,6 +2,13 @@ Kafka Zookeeper local setup on Windows:
 ---------------------------------------------
 https://dzone.com/articles/running-apache-kafka-on-windows-os
 
+ZooKeeper:
+-------------
+Add ZOOKEEPER_HOME = C:\zookeeper-3.4.7 to the System Variables.
+Edit the System Variable named “Path” and add ;%ZOOKEEPER_HOME%\bin; 
+You can change the default Zookeeper port in zoo.cfg file (Default port 2181).
+Run Zookeeper by opening a new cmd and type zkserver.
+
 Start Kafka server:
 ---------------------
 1. Go to your Kafka installation directory: C:\kafka_2.11-0.9.0.0\
