@@ -1,3 +1,37 @@
 Kafka Zookeeper local setup on Windows:
 ---------------------------------------------
 https://dzone.com/articles/running-apache-kafka-on-windows-os
+
+Start Kafka server:
+---------------------
+1. Go to your Kafka installation directory: C:\kafka_2.11-0.9.0.0\
+2. Open a command prompt here by pressing Shift + right click and choose the “Open command window here” option).
+3. Now type .\bin\windows\kafka-server-start.bat .\config\server.properties and press Enter.
+
+Creating Topics
+----------------
+2. Open a new command prompt in the location C:\kafka_2.11-0.9.0.0\bin\windows.
+
+3. Type the following command and hit Enter:
+
+kafka-topics.bat --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic test
+
+Creating a Producer and Consumer to Test Server
+----------------------------------------------------
+1. Open a new command prompt in the location C:\kafka_2.11-0.9.0.0\bin\windows
+
+2. To start a producer type the following command:
+   kafka-console-producer.bat --broker-list localhost:9092 --topic test
+
+3. Again open a new command prompt in the same location as C:\kafka_2.11-0.9.0.0\bin\windows
+
+4. Now start a consumer by typing the following command:
+   kafka-console-consumer.bat --zookeeper localhost:2181 --topic test
+
+
+Some Other Useful Commands:
+-----------------------------
+List Topics: kafka-topics.bat --list --zookeeper localhost:2181  
+Describe Topic: kafka-topics.bat --describe --zookeeper localhost:2181 --topic [Topic Name]
+Read messages from the beginning: kafka-console-consumer.bat --zookeeper localhost:2181 --topic [Topic Name] --from-beginning
+Delete Topic: kafka-run-class.bat kafka.admin.TopicCommand --delete --topic [topic_to_delete] --zookeeper localhost:2181
