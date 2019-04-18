@@ -42,3 +42,7 @@ List Topics: kafka-topics.bat --list --zookeeper localhost:2181
 Describe Topic: kafka-topics.bat --describe --zookeeper localhost:2181 --topic [Topic Name]
 Read messages from the beginning: kafka-console-consumer.bat --zookeeper localhost:2181 --topic [Topic Name] --from-beginning
 Delete Topic: kafka-run-class.bat kafka.admin.TopicCommand --delete --topic [topic_to_delete] --zookeeper localhost:2181
+
+-----------------------------
+
+https://github.com/code-not-found/spring-kafka/tree/master/spring-kafka-hello-world
