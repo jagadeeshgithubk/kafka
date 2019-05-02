@@ -55,3 +55,5 @@ kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic testtopic -
 Example Kafka listerner code:
 -----------------------------
 https://github.com/code-not-found/spring-kafka/tree/master/spring-kafka-hello-world
+
+https://stackoverflow.com/questions/53327998/how-to-skip-corrupt-non-serializable-messages-in-spring-kafka-consumer
